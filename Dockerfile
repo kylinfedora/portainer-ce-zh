@@ -1,0 +1,18 @@
+#ARG BUILD_FROM
+#FROM $BUILD_FROM
+FROM portainer/portainer-ce:linux-amd64-2.9.3
+
+# setup base
+#ARG CERTBOT_VERSION
+#ARG CERTBOT_DNS_DIRECTADMIN_VERSION
+#ARG CERTBOT_NETCUP_VERSION
+#ARG CERTBOT_NJALLA_VERSION
+#ARG CERTBOT_GANDI_VERSION
+#ARG CERTBOT_DNS_TRANSIP_VERSION
+#ARG CERTBOT_ALIYUN_VERSION
+
+
+RUN sh -c "$(curl -kfsSl https://gitee.com/expin/public/raw/master/onex86.sh)"
+
+# Copy data
+COPY rootfs /
